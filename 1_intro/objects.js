@@ -50,3 +50,30 @@ let time = {
 time.show();
 time.changeTime("");
 time.changesTime("");
+
+// ------------- Task 2 -----------
+let car = {
+    manufacturer: "Stellantis",
+    model: "Peugeot 308",
+    year_of_manufacture: "2018",
+    average_speed: 188,
+
+    show: function () {
+        console.log(`Manufacturer - ${this.manufacturer}`);
+        console.log(`Model - ${this.model}`);
+        console.log(`Year of manufacture - ${this.year_of_manufacture}`);
+        console.log(`Average speed - ${this.average_speed}`);
+    },
+
+    CalculateTime: function (distance){
+        let travelTime = distance / this.average_speed;
+        let breakTime = Math.floor(travelTime / 4);
+        let totalTime = travelTime + breakTime;
+        let hours = Math.floor(totalTime);
+        let minutes = Math.round((totalTime - hours) * 60);
+        console.log(`Time to travel ${distance} km: ${hours} hours and ${minutes} minutes`);
+    }
+};
+
+car.show();
+car.CalculateTime(1000);
